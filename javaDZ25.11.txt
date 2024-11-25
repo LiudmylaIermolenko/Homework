@@ -1,0 +1,138 @@
+D-z n1:
+
+public class Main {
+    public static void main(String[] args) {
+//        System.out.print("Hello and welcome!");
+
+        byte byteValue = 127;             // Максимальное значение byte
+        short shortValue = 32767;         // Максимальное значение short
+        int intValue = 2147483647;        // Максимальное значение int
+        long longValue = 9223372036854775807L; // Максимальное значение long (обязательно L в конце)
+        float floatValue = 3.14f;         // Число с плавающей точкой (обязательно f в конце)
+        double doubleValue = 2.718281828459045; // Число с плавающей точкой двойной точности
+        char charValue = 'A';             // Символьный тип
+        boolean booleanValue = true;      // Логический тип
+
+        // Вывод всех значений в консоль
+        System.out.println("byte: " + byteValue);
+        System.out.println("short: " + shortValue);
+        System.out.println("int: " + intValue);
+        System.out.println("long: " + longValue);
+        System.out.println("float: " + floatValue);
+        System.out.println("double: " + doubleValue);
+        System.out.println("char: " + charValue);
+        System.out.println("boolean: " + booleanValue);
+    }
+}
+
+D-z n2:
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Читаем трёхзначное число от пользователя
+        System.out.print("Введите трёхзначное число: ");
+        int number = scanner.nextInt();
+
+        // Убедимся, что число трёхзначное
+        if (number >= 100 && number <= 999) {
+            // Извлекаем цифры
+            int hundreds = number / 100;         // Сотни
+            int tens = (number / 10) % 10;       // Десятки
+            int units = number % 10;            // Единицы
+
+            // Выводим цифры
+            System.out.println("Сотни: " + hundreds);
+            System.out.println("Десятки: " + tens);
+            System.out.println("Единицы: " + units);
+        } else {
+            System.out.println("Ошибка: введите трёхзначное число.");
+        }
+
+        scanner.close();
+    }
+}
+
+D-z n3:
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Создайте строку через new
+        String str = new String("I study Basic Java!");
+
+        // 2. Напишите метод, который принимает строку как параметр
+        processString(str);
+    }
+
+    public static void processString(String str) {
+        // 3. Распечатать последний символ строки
+        char lastChar = str.charAt(str.length() - 1);
+        System.out.println("Последний символ строки: " + lastChar);
+
+        // 4. Проверить, содержит ли строка подстроку "Java"
+        boolean containsJava = str.contains("Java");
+        System.out.println("Строка содержит 'Java': " + containsJava);
+
+        // 5. Заменить все символы "а" на "о"
+        String replacedStr = str.replace('a', 'o');
+        System.out.println("Строка после замены 'a' на 'o': " + replacedStr);
+
+        // 6. Преобразовать строку к верхнему регистру
+        String upperCaseStr = str.toUpperCase();
+        System.out.println("Строка в верхнем регистре: " + upperCaseStr);
+
+        // 7. Преобразовать строку к нижнему регистру
+        String lowerCaseStr = str.toLowerCase();
+        System.out.println("Строка в нижнем регистре: " + lowerCaseStr);
+
+        // 8. Вырезать строку "Java" с помощью метода substring()
+        int startIndex = str.indexOf("Java");
+        int endIndex = startIndex + "Java".length();
+        String substringJava = str.substring(startIndex, endIndex);
+        System.out.println("Вырезанная строка 'Java': " + substringJava);
+    }
+}
+
+L-z n 4:
+
+public class MathOperations {
+    public static void main(String[] args) {
+        // Вызов каждого метода с примерными значениями
+        int a = 20;
+        int b = 10;
+
+        System.out.println("Сложение: " + add(a, b));
+        System.out.println("Вычитание: " + subtract(a, b));
+        System.out.println("Умножение: " + multiply(a, b));
+        System.out.println("Деление: " + divide(a, b));
+    }
+
+    // Метод для сложения
+    public static int add(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    // Метод для вычитания
+    public static int subtract(int num1, int num2) {
+        return num1 - num2;
+    }
+
+    // Метод для умножения
+    public static int multiply(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    // Метод для деления
+    public static int divide(int num1, int num2) {
+        // Проверка, чтобы избежать деления на ноль
+        if (num2 == 0) {
+            System.out.println("Ошибка: деление на ноль!");
+            return 0; // Возвращаем 0 в случае ошибки
+        }
+        return num1 / num2;
+    }
+}
+

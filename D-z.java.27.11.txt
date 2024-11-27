@@ -1,0 +1,121 @@
+D-Z n1:
+
+1)Main.java:
+
+public class Main {
+
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        int num1 = 15;
+        int num2 = 5;
+//        printAll(num1, num2);
+        calculator.printAll(num1, num2);
+        num1 = 20;
+        num2 = 10;
+        calculator.printAll(num1, num2);
+//        printAll(num1, num2);
+
+
+    }
+
+    private static void printAll(int num1, int num2) {
+//        int add = getAdd(num1, num2);
+//        int sub = getSub(num1, num2);
+//        int mul = getMul(num1, num2);
+//        int div = getDiv(num1, num2);
+
+        // Вызов методов и вывод результатов
+//        System.out.println("add = " + getAdd(num1, num2));
+//        System.out.println("sub = " + getSub(num1, num2));
+//        System.out.println("mul = " + getMul(num1, num2));
+//        System.out.println("div = " + getDiv(num1, num2));
+//    }
+//
+//    private static int getDiv(int num1, int num2) {
+//        return num1 / num2;
+//    }
+//
+//    private static int getMul(int num1, int num2) {
+//        return num1 * num2;
+//    }
+//
+//    private static int getSub(int num1, int num2) {
+//        return num1 - num2;
+//    }
+//
+//    private static int getAdd(int num1, int num2) {
+//        return num1 + num2;
+//    }
+
+    }
+}
+
+2)Calculator.java:
+
+package org.example;
+
+public class Calculator {
+    public void printAll(int num1, int num2) {
+        System.out.println("add = " + getAdd(num1, num2));
+        System.out.println("sub = " + getSub(num1, num2));
+        System.out.println("mul = " + getMul(num1, num2));
+        System.out.println("div = " + getDiv(num1, num2));
+    }
+
+    public int getDiv(int num1, int num2) {
+        return num1 / num2;
+    }
+
+    public int getMul(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public int getSub(int num1, int num2) {
+        return num1 - num2;
+    }
+
+public int getAdd(int num1, int num2) {
+    return num1 + num2;
+}
+}
+
+D-Z n2:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ввод первого слова
+        System.out.println("Введите первое слово (с четным количеством букв):");
+        String word1 = scanner.nextLine();
+
+        // Проверка, что длина слова четная
+        if (word1.length() % 2 != 0) {
+            System.out.println("Ошибка: длина первого слова должна быть четной!");
+            return;
+        }
+
+        // Ввод второго слова
+        System.out.println("Введите второе слово (с четным количеством букв):");
+        String word2 = scanner.nextLine();
+
+        // Проверка, что длина слова четная
+        if (word2.length() % 2 != 0) {
+            System.out.println("Ошибка: длина второго слова должна быть четной!");
+            return;
+        }
+
+        // Получение половин слов
+        String firstHalf = word1.substring(0, word1.length() / 2);
+        String secondHalf = word2.substring(word2.length() / 2);
+
+        // Создание нового слова
+        String result = firstHalf + secondHalf;
+
+        // Вывод результата
+        System.out.println("Новое слово: " + result);
+    }
+}
+
